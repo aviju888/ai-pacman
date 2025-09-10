@@ -479,14 +479,8 @@ Each question builds understanding of reinforcement learning concepts while prov
 
 ## 🏆 Credits
 
-**Original Development**: UC Berkeley CS188 Course
-- **Instructors**: John DeNero, Dan Klein
-- **Contributors**: Pieter Abbeel, Brad Miller, Nick Hay
+**Original Development**: UC Berkeley Intro to AI
 
 **Educational Purpose**: This implementation is designed for learning reinforcement learning concepts in an engaging, visual environment.
 
 **License**: Educational use only - please follow UC Berkeley's academic integrity policies.
-
----
-
-*Happy Learning! 🎮🤖*
