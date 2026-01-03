@@ -95,7 +95,7 @@ install_all() {
 }
 
 run_backend() {
-    echo -e "${GREEN}Starting Flask API server on http://localhost:5000${NC}"
+    echo -e "${GREEN}Starting Flask API server on http://localhost:5001${NC}"
     cd "$SCRIPT_DIR/backend"
     $PYTHON api.py
 }
@@ -108,7 +108,7 @@ run_frontend() {
 
 run_dev() {
     echo -e "${GREEN}Starting development servers...${NC}"
-    echo -e "${YELLOW}Backend:${NC} http://localhost:5000"
+    echo -e "${YELLOW}Backend:${NC} http://localhost:5001"
     echo -e "${YELLOW}Frontend:${NC} http://localhost:3000"
     echo
     echo -e "${CYAN}Press Ctrl+C to stop both servers${NC}"

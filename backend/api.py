@@ -551,7 +551,14 @@ def compare_algorithms():
 
 
 if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--port', type=int, default=5001, help='Port to run on (default: 5001)')
+    args = parser.parse_args()
+
     print("Starting AI-Pacman API Server...")
+    print(f"Running on http://localhost:{args.port}")
+    print()
     print("Available endpoints:")
     print("  GET  /api/health - Health check")
     print("  GET  /api/layouts - List available layouts")
@@ -563,4 +570,4 @@ if __name__ == '__main__':
     print("  POST /api/pacman/run - Run Pacman game")
     print("  POST /api/demo/compare - Compare algorithms")
     print()
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=args.port, debug=True)
