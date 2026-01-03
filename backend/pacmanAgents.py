@@ -61,3 +61,14 @@ class GreedyAgent(Agent):
 
 def scoreEvaluation(state):
     return state.getScore()
+
+
+class RandomAgent(Agent):
+    """An agent that takes random actions"""
+    def getAction(self, state):
+        legal = state.getLegalPacmanActions()
+        if Directions.STOP in legal:
+            legal.remove(Directions.STOP)
+        if legal:
+            return random.choice(legal)
+        return Directions.STOP

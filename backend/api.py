@@ -268,6 +268,7 @@ def start_qlearning():
         # Run training
         results = []
         for episode in range(episodes):
+            agent.startEpisode()
             state = env.getCurrentState()
             total_reward = 0
             steps = 0
@@ -283,6 +284,7 @@ def start_qlearning():
 
                 next_state, reward = env.doAction(action)
                 agent.update(state, action, next_state, reward)
+                agent.episodeRewards += reward
 
                 total_reward += reward
                 steps += 1
@@ -516,6 +518,7 @@ def compare_algorithms():
         )
 
         for _ in range(episodes):
+            ql_agent.startEpisode()
             state = env.getCurrentState()
             while state != gw.grid.terminalState:
                 action = ql_agent.getAction(state)
@@ -523,6 +526,7 @@ def compare_algorithms():
                     break
                 next_state, reward = env.doAction(action)
                 ql_agent.update(state, action, next_state, reward)
+                ql_agent.episodeRewards += reward
                 state = next_state
             ql_agent.stopEpisode()
             env.reset()
